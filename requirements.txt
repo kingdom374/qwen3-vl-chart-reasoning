@@ -1,0 +1,10 @@
+# Reuse an existing compatible GPU PyTorch installation. See README.md.
+-c constraints-gpu.txt
+transformers==4.57.6
+accelerate==1.12.0
+pyarrow==22.0.0
+huggingface-hub==0.36.2
+tokenizers==0.22.2
+regex==2026.11.9
+Pillow==11.3.0
+filelock==3.20.0

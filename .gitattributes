@@ -1,0 +1,7 @@
+# Use consistent line endings for source code and documentation.
+* text=auto eol=lf
+
+# Preserve archived evidence bytes, including the hashed sample manifest.
+outputs/**/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+outputs/**/*.jsonl -text whitespace=trailing-space,space-before-tab,cr-at-eol
+outputs/**/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

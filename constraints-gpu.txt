@@ -1,0 +1,3 @@
+# Keep the GPU packages used in the recorded P0 run.
+torch==2.10.0+cu130
+torchvision==0.25.0+cu130

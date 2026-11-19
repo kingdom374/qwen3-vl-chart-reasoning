@@ -1,0 +1,814 @@
+{
+  "dataset_id": "ahmed-masry/ChartQA",
+  "dataset_revision": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+  "split": "val",
+  "parquet_file": "data/val-00000-of-00001.parquet",
+  "split_type_counts": {
+    "human": 960,
+    "augmented": 960
+  },
+  "seed": 42,
+  "samples_per_type": 50,
+  "samples": [
+    {
+      "sample_id": "val:6",
+      "row_index": 6,
+      "imgname": "11756.png",
+      "question": "What is the unfavourable value in 2014?",
+      "reference_answer": "64",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:25",
+      "row_index": 25,
+      "imgname": "5975.png",
+      "question": "What is the total percentage of Afghan applicants and Iraqi applicants?",
+      "reference_answer": "0.34",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:27",
+      "row_index": 27,
+      "imgname": "13629.png",
+      "question": "What's the ratio of Lean Republican segment and Republican segment?",
+      "reference_answer": "0.7358",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:30",
+      "row_index": 30,
+      "imgname": "7705.png",
+      "question": "What's the value of leftmost bar in the bottom?",
+      "reference_answer": "12",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:32",
+      "row_index": 32,
+      "imgname": "7862.png",
+      "question": "Which country data analysed here?",
+      "reference_answer": "cuba",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:89",
+      "row_index": 89,
+      "imgname": "20294671002019.png",
+      "question": "Is the add up value of Comoros,Nicargua,Australia,Belgium is gretaer then Laos?",
+      "reference_answer": "No",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:94",
+      "row_index": 94,
+      "imgname": "24259131001104.png",
+      "question": "How many colors are represented in the bar??",
+      "reference_answer": "5",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:95",
+      "row_index": 95,
+      "imgname": "24259131001104.png",
+      "question": "What is the difference between Industry employment percentage in Iran and Kenya??",
+      "reference_answer": "26.38",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:99",
+      "row_index": 99,
+      "imgname": "28295350001469.png",
+      "question": "What's the average value of first two bars in the chart??",
+      "reference_answer": "0.33",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:104",
+      "row_index": 104,
+      "imgname": "30689454000026.png",
+      "question": "Which country is indicated by the middle bar?",
+      "reference_answer": "Namibia",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:114",
+      "row_index": 114,
+      "imgname": "35422616009087.png",
+      "question": "What denotes the green color bar ??",
+      "reference_answer": "Sub-Saharan Africa",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:142",
+      "row_index": 142,
+      "imgname": "62127896000657.png",
+      "question": "What's the value of smallest bar?",
+      "reference_answer": "0.96",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:159",
+      "row_index": 159,
+      "imgname": "79962299000211.png",
+      "question": "What is the value of the United Kingdom?",
+      "reference_answer": "0.354",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:163",
+      "row_index": 163,
+      "imgname": "00006834003066.png",
+      "question": "When does the gap between Nigeria and India reach the largest value?",
+      "reference_answer": "2021",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:203",
+      "row_index": 203,
+      "imgname": "35310481008378.png",
+      "question": "what is the difference in Alcohol and drug use disorders in Tajikistan between 2000 and 2009?",
+      "reference_answer": "0.005",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:220",
+      "row_index": 220,
+      "imgname": "51070810006766.png",
+      "question": "Is the starting value of the red graph the lowest value?",
+      "reference_answer": "Yes",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:223",
+      "row_index": 223,
+      "imgname": "51365289000754.png",
+      "question": "In which year, the middle line (Uruguay) is lowest?",
+      "reference_answer": "1975",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:225",
+      "row_index": 225,
+      "imgname": "53652196019796.png",
+      "question": "Which bar has the lowest value?",
+      "reference_answer": "Lesotho",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:228",
+      "row_index": 228,
+      "imgname": "54723242000601.png",
+      "question": "Which gender is represented by the red color line?",
+      "reference_answer": "Male",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:238",
+      "row_index": 238,
+      "imgname": "75903579005297.png",
+      "question": "Which country is represented by the given line graph?",
+      "reference_answer": "Jamaica",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:250",
+      "row_index": 250,
+      "imgname": "96190408006726.png",
+      "question": "In which year, the value of Employment in the agriculture graph peaked?",
+      "reference_answer": "1999",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:281",
+      "row_index": 281,
+      "imgname": "2515.png",
+      "question": "Is the sum of the highest value of navy blue bar and median of light blue bar greater than 100?",
+      "reference_answer": "No",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:284",
+      "row_index": 284,
+      "imgname": "2595.png",
+      "question": "What percent of the Labour group shows the economic situation is Bad in Uk?",
+      "reference_answer": "60",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:344",
+      "row_index": 344,
+      "imgname": "8342.png",
+      "question": "What's the value of the rightmost first bar from the bottom?",
+      "reference_answer": "8",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:348",
+      "row_index": 348,
+      "imgname": "8500.png",
+      "question": "What represents the two bars in the chart??",
+      "reference_answer": "[Oppose, Favor]",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:389",
+      "row_index": 389,
+      "imgname": "OECD_PRIVATE_FLOWS_DAC_GRC_PRT_SWE_000010.png",
+      "question": "Is the difference value of DAC Countries is more then Sweden?",
+      "reference_answer": "Yes",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:429",
+      "row_index": 429,
+      "imgname": "OECD_DAILY_SMOKERS_CZE_IRL_LUX_LVA_SVN_000004.png",
+      "question": "In which year, the percentage of daily smokers in Luxembourg is greater than Ireland?",
+      "reference_answer": "2019",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:432",
+      "row_index": 432,
+      "imgname": "OECD_FDI_RESTRICTIVENESS_LVA_SVN_000012.png",
+      "question": "How many countries are shown in the chart?",
+      "reference_answer": "2",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:459",
+      "row_index": 459,
+      "imgname": "OECD_TAX_ON_PAYROLL_AUS_CZE_ESP_FRA_JPN_000124.png",
+      "question": "At how much points does lines representing Australia and France crosses each other?",
+      "reference_answer": "1",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:517",
+      "row_index": 517,
+      "imgname": "two_col_100223.png",
+      "question": "In which category the index score value is 1?",
+      "reference_answer": "Legislators, senior officials and managers",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:558",
+      "row_index": 558,
+      "imgname": "two_col_104870.png",
+      "question": "Which has the percentage higher than 50%?",
+      "reference_answer": "Photos",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:574",
+      "row_index": 574,
+      "imgname": "two_col_3853.png",
+      "question": "What is the budgeted public sector expenditure on Transport in 2019  (in billion GBP)?",
+      "reference_answer": "44",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:603",
+      "row_index": 603,
+      "imgname": "two_col_5812.png",
+      "question": "What is the total number of Facebook fans (in millions) that BOSS and ROLEX have?",
+      "reference_answer": "16.06",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:604",
+      "row_index": 604,
+      "imgname": "two_col_5836.png",
+      "question": "What is the highest value of the monthly average earnings per hour of all employees in the US  between May 2020 and May 2021?",
+      "reference_answer": "30.33",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:616",
+      "row_index": 616,
+      "imgname": "two_col_20990.png",
+      "question": "What is the number of fatalities in 2016?",
+      "reference_answer": "563",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:654",
+      "row_index": 654,
+      "imgname": "two_col_24642.png",
+      "question": "What energy source has the largest share?",
+      "reference_answer": "Hard coal",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:665",
+      "row_index": 665,
+      "imgname": "two_col_41834.png",
+      "question": "If we add Gucci and Saint Laurent percentage, write the result?",
+      "reference_answer": "73",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:692",
+      "row_index": 692,
+      "imgname": "two_col_60280.png",
+      "question": "Which date the line chart have vertical rise?",
+      "reference_answer": "Mar 31 '20",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:714",
+      "row_index": 714,
+      "imgname": "multi_col_100758.png",
+      "question": "How many years are represented in the data?",
+      "reference_answer": "3",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:718",
+      "row_index": 718,
+      "imgname": "multi_col_100785.png",
+      "question": "What's the percentage value of White female presidents?",
+      "reference_answer": "33",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:733",
+      "row_index": 733,
+      "imgname": "multi_col_101153.png",
+      "question": "What is the difference between male and female in 2008?",
+      "reference_answer": "3.94",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:754",
+      "row_index": 754,
+      "imgname": "multi_col_1313.png",
+      "question": "which value has the highest GBP?",
+      "reference_answer": "Direct and indirect value",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:758",
+      "row_index": 758,
+      "imgname": "multi_col_1346.png",
+      "question": "which age group had the highest number of yes",
+      "reference_answer": "18-34 years",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:759",
+      "row_index": 759,
+      "imgname": "multi_col_1346.png",
+      "question": "what is the number of yes subtracted from the first age group and the last age group?",
+      "reference_answer": "6",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:777",
+      "row_index": 777,
+      "imgname": "multi_col_988.png",
+      "question": "What's the total percentage of sexy attire for those 13-20 year old in movies?",
+      "reference_answer": "37.3",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:781",
+      "row_index": 781,
+      "imgname": "multi_col_20001.png",
+      "question": "For which of the degrees is there the biggest gap between the median weekly earnings of full-time wage and salary workers in 2020 in the US?",
+      "reference_answer": "Some college or associate's degree",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:825",
+      "row_index": 825,
+      "imgname": "multi_col_21042.png",
+      "question": "What is the average of Hot dog?",
+      "reference_answer": "4.625",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:828",
+      "row_index": 828,
+      "imgname": "multi_col_21102.png",
+      "question": "How many payment methods are considered in the graph?",
+      "reference_answer": "5",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:890",
+      "row_index": 890,
+      "imgname": "multi_col_60779.png",
+      "question": "How many dark blue bar crossed 50 mark?",
+      "reference_answer": "2",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:913",
+      "row_index": 913,
+      "imgname": "multi_col_80151.png",
+      "question": "What's the percentage of boomers who never use social media?",
+      "reference_answer": "48",
+      "type": "human"
+    },
+    {
+      "sample_id": "val:1004",
+      "row_index": 1004,
+      "imgname": "two_col_21498.png",
+      "question": "What country had the world's largest potash reserves in 2019?",
+      "reference_answer": "Canada",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1006",
+      "row_index": 1006,
+      "imgname": "two_col_225.png",
+      "question": "Who is the most successful actress in the history of the Academy Awards?",
+      "reference_answer": "Katharine Hepburn",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1031",
+      "row_index": 1031,
+      "imgname": "two_col_1723.png",
+      "question": "What percentage of pet store revenue did shoppers between 45 and 64 account for in 2021?",
+      "reference_answer": "45.2",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1040",
+      "row_index": 1040,
+      "imgname": "two_col_23397.png",
+      "question": "What percentage of the world's total energy supply was nuclear energy in 2018?",
+      "reference_answer": "4.9",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1041",
+      "row_index": 1041,
+      "imgname": "two_col_24100.png",
+      "question": "What was the TIV of Australian arms exports to the United States in 2018?",
+      "reference_answer": "30",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1063",
+      "row_index": 1063,
+      "imgname": "two_col_6115.png",
+      "question": "What was Austria's average annual wage from 2000 to 2019?",
+      "reference_answer": "44689",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1087",
+      "row_index": 1087,
+      "imgname": "multi_col_892.png",
+      "question": "What percentage of female respondents said they were avid sports fans?",
+      "reference_answer": "12",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1126",
+      "row_index": 1126,
+      "imgname": "two_col_20108.png",
+      "question": "How much revenue did Nutrien report in 2020?",
+      "reference_answer": "20908",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1156",
+      "row_index": 1156,
+      "imgname": "two_col_104583.png",
+      "question": "What was the most expensive vacation rental destination in the United States as of June 2014?",
+      "reference_answer": "Martha's Vineyard",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1174",
+      "row_index": 1174,
+      "imgname": "two_col_62272.png",
+      "question": "How much did the U.S. export aerospace products worth in dollars in 2019?",
+      "reference_answer": "137.73",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1193",
+      "row_index": 1193,
+      "imgname": "two_col_83061.png",
+      "question": "How many cubic meters of natural gas was produced in the Netherlands in 2019?",
+      "reference_answer": "28.1",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1198",
+      "row_index": 1198,
+      "imgname": "multi_col_935.png",
+      "question": "How many dollars did retail sales of cannabis reach in Canada in December of 2020?",
+      "reference_answer": "298.44",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1230",
+      "row_index": 1230,
+      "imgname": "two_col_104496.png",
+      "question": "What was Whistles turnover in 2016?",
+      "reference_answer": "33",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1233",
+      "row_index": 1233,
+      "imgname": "two_col_102321.png",
+      "question": "What was Bolivia's spending on health a year earlier?",
+      "reference_answer": "6.49",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1244",
+      "row_index": 1244,
+      "imgname": "two_col_22252.png",
+      "question": "What was the revenue of the Arizona Cardinals in 2019?",
+      "reference_answer": "422",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1256",
+      "row_index": 1256,
+      "imgname": "two_col_63132.png",
+      "question": "How many cases of racist incidents were recorded in 2019/20?",
+      "reference_answer": "76070",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1260",
+      "row_index": 1260,
+      "imgname": "two_col_63382.png",
+      "question": "What was the lowest rate of living in Nuevo Le3n?",
+      "reference_answer": "3.1",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1312",
+      "row_index": 1312,
+      "imgname": "multi_col_80093.png",
+      "question": "How much money did the apparel segment of Dollar General generate in 2020?",
+      "reference_answer": "1506.1",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1323",
+      "row_index": 1323,
+      "imgname": "multi_col_507.png",
+      "question": "How many Democratic senators make up the 116th Congress?",
+      "reference_answer": "45",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1327",
+      "row_index": 1327,
+      "imgname": "two_col_2542.png",
+      "question": "What was the leading lobbying firm in the United States in 2020?",
+      "reference_answer": "Akin, Gump et al",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1330",
+      "row_index": 1330,
+      "imgname": "two_col_22430.png",
+      "question": "Which country was the leading global exporter of avocados in 2019?",
+      "reference_answer": "Mexico",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1333",
+      "row_index": 1333,
+      "imgname": "two_col_62678.png",
+      "question": "What was Europe's total FDI inflows in 2012?",
+      "reference_answer": "293.5",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1339",
+      "row_index": 1339,
+      "imgname": "multi_col_706.png",
+      "question": "How many Carrabba's Italian Grill restaurants were there in 2020?",
+      "reference_answer": "220",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1347",
+      "row_index": 1347,
+      "imgname": "two_col_5628.png",
+      "question": "What is the expected CAGR of food intolerance for the period 2011-2015?",
+      "reference_answer": "10",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1349",
+      "row_index": 1349,
+      "imgname": "two_col_42082.png",
+      "question": "What was the total value of merger and acquisition deals in the minerals and mining sector in 2018?",
+      "reference_answer": "77.8",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1424",
+      "row_index": 1424,
+      "imgname": "two_col_82902.png",
+      "question": "What was China's export value in dollars in 2018?",
+      "reference_answer": "26588",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1430",
+      "row_index": 1430,
+      "imgname": "multi_col_20579.png",
+      "question": "Watches and jewelry had a share of what percentage in the global luxury goods market in 2007?",
+      "reference_answer": "18.2",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1509",
+      "row_index": 1509,
+      "imgname": "two_col_1304.png",
+      "question": "Which team has won the most League Cup titles?",
+      "reference_answer": "Liverpool FC",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1525",
+      "row_index": 1525,
+      "imgname": "two_col_101648.png",
+      "question": "What was the value of end-user payments for NC software in 2013?",
+      "reference_answer": "1.64",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1551",
+      "row_index": 1551,
+      "imgname": "two_col_40211.png",
+      "question": "Which soccer club ranked fourth in the Serie A rankings?",
+      "reference_answer": "Genoa CFC",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1578",
+      "row_index": 1578,
+      "imgname": "two_col_43537.png",
+      "question": "Which football club had the lowest number of footballers as of October 2020?",
+      "reference_answer": "Juventus FC",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1593",
+      "row_index": 1593,
+      "imgname": "two_col_63452.png",
+      "question": "What was the U.S. notebook market penetration in 2010?",
+      "reference_answer": "63",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1603",
+      "row_index": 1603,
+      "imgname": "two_col_21320.png",
+      "question": "What was Kentucky's GDP in 2020?",
+      "reference_answer": "183.8",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1610",
+      "row_index": 1610,
+      "imgname": "two_col_43613.png",
+      "question": "What was the net banking income of European banks in 2013?",
+      "reference_answer": "700",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1637",
+      "row_index": 1637,
+      "imgname": "two_col_80983.png",
+      "question": "What was the annual value of French imports from Russia in 2019?",
+      "reference_answer": "9158",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1646",
+      "row_index": 1646,
+      "imgname": "two_col_62653.png",
+      "question": "How much did the population of Latin America & Caribbean grow in 2019?",
+      "reference_answer": "0.93",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1678",
+      "row_index": 1678,
+      "imgname": "two_col_23530.png",
+      "question": "What was the total sales of office supplies, stationery, and gift stores in the United States a year earlier?",
+      "reference_answer": "30.32",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1681",
+      "row_index": 1681,
+      "imgname": "two_col_23.png",
+      "question": "What was the national debt of the United States of America in dollars in September of 2020?",
+      "reference_answer": "26945.39",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1707",
+      "row_index": 1707,
+      "imgname": "two_col_3102.png",
+      "question": "What was the most-followed brand on Facebook in Hong Kong as of March 2021?",
+      "reference_answer": "Blackview",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1751",
+      "row_index": 1751,
+      "imgname": "two_col_104678.png",
+      "question": "How many games have Clemens and Young won?",
+      "reference_answer": "192",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1786",
+      "row_index": 1786,
+      "imgname": "two_col_23202.png",
+      "question": "Which region had the highest number of cases of coronavirus?",
+      "reference_answer": "Lombardy",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1809",
+      "row_index": 1809,
+      "imgname": "two_col_103824.png",
+      "question": "How many points does Ronan O'Gara have for the Irish national rugby team?",
+      "reference_answer": "93",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1814",
+      "row_index": 1814,
+      "imgname": "multi_col_20619.png",
+      "question": "What was Deutsche Telekom's revenue in Germany in 2020?",
+      "reference_answer": "24.63",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1827",
+      "row_index": 1827,
+      "imgname": "two_col_82790.png",
+      "question": "What was the crude birth rate in Egypt in 2019?",
+      "reference_answer": "25.71",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1835",
+      "row_index": 1835,
+      "imgname": "two_col_40801.png",
+      "question": "How many fans did the USA Today profile have on Facebook?",
+      "reference_answer": "4824550",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1842",
+      "row_index": 1842,
+      "imgname": "two_col_20122.png",
+      "question": "What was Zimbabwe's youth unemployment rate in 2020?",
+      "reference_answer": "8.07",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1847",
+      "row_index": 1847,
+      "imgname": "two_col_23715.png",
+      "question": "What was the monthly CPI for lamb and goat meat in Italy at the beginning of the year 2015?",
+      "reference_answer": "101.7",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1866",
+      "row_index": 1866,
+      "imgname": "two_col_43717.png",
+      "question": "What was the most frequently used social network in Canada?",
+      "reference_answer": "Instagram",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1904",
+      "row_index": 1904,
+      "imgname": "two_col_100172.png",
+      "question": "In what year did the turnover of the retail sale of leisure products increase to 6.7 billion British pounds?",
+      "reference_answer": "2017",
+      "type": "augmented"
+    },
+    {
+      "sample_id": "val:1919",
+      "row_index": 1919,
+      "imgname": "two_col_23389.png",
+      "question": "Which country ranked second in the Italian migration chart?",
+      "reference_answer": "Lampedusa",
+      "type": "augmented"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Local runtimes, downloaded datasets and model weights
+/.venv/
+/.cache/
+/data/
+/models/
+/checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.parquet
+*.incomplete
+
+# Python and tools
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.idea/
+*.log
+*.lock
+.DS_Store
+Thumbs.db
+
+# Local credentials
+.env
+.env.*
+!.env.example
+/.aws/
+/.codex/
+/.agents/
+*.pem
+*.key
+
+# Personal project handoff notes
+/*交接*.md
+
+# Publish only the small, recorded P0 evidence files below
+/outputs/*
+!/outputs/chartqa_p0/
+/outputs/chartqa_p0/*
+!/outputs/chartqa_p0/manifest.json
+!/outputs/chartqa_p0/smoke_bf16_512.json
+!/outputs/chartqa_p0/batch_bf16_512/
+/outputs/chartqa_p0/batch_bf16_512/*
+!/outputs/chartqa_p0/batch_bf16_512/config.json
+!/outputs/chartqa_p0/batch_bf16_512/last_run.json
+!/outputs/chartqa_p0/batch_bf16_512/predictions.jsonl
+!/outputs/chartqa_p0/batch_bf16_512/scored_predictions.jsonl
+!/outputs/chartqa_p0/batch_bf16_512/summary.json
+!/outputs/chartqa_p0/batch_bf16_512/bad_cases.csv

@@ -1,0 +1,33 @@
+{
+  "sample_id": "val:6",
+  "imgname": "11756.png",
+  "dataset_revision": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+  "question": "What is the unfavourable value in 2014?",
+  "reference_answer": "64",
+  "raw_prediction": "64",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "prompt_suffix": "Answer with only the final answer.",
+  "do_sample": false,
+  "max_image_tokens": 512,
+  "max_new_tokens": 32,
+  "input_ids_shape": [
+    1,
+    151
+  ],
+  "pixel_values_shape": [
+    480,
+    1536
+  ],
+  "image_grid_thw": [
+    1,
+    24,
+    20
+  ],
+  "image_tokens": 120,
+  "generated_tokens": 3,
+  "peak_allocated_mib": 4102.3,
+  "peak_reserved_mib": 4128.0
+}

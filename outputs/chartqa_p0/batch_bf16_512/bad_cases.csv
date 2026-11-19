@@ -1,0 +1,21 @@
+﻿sample_id,row_index,imgname,type,question,reference_answer,raw_prediction
+val:25,25,5975.png,human,What is the total percentage of Afghan applicants and Iraqi applicants?,0.34,69
+val:30,30,7705.png,human,What's the value of leftmost bar in the bottom?,12,57
+val:159,159,79962299000211.png,human,What is the value of the United Kingdom?,0.354,35.4
+val:203,203,35310481008378.png,human,what is the difference in Alcohol and drug use disorders in Tajikistan between 2000 and 2009?,0.005,0.05
+val:220,220,51070810006766.png,human,Is the starting value of the red graph the lowest value?,Yes,No
+val:281,281,2515.png,human,Is the sum of the highest value of navy blue bar and median of light blue bar greater than 100?,No,Yes
+val:348,348,8500.png,human,What represents the two bars in the chart??,"[Oppose, Favor]",Favor and Oppose
+val:459,459,OECD_TAX_ON_PAYROLL_AUS_CZE_ESP_FRA_JPN_000124.png,human,At how much points does lines representing Australia and France crosses each other?,1,0.8
+val:733,733,multi_col_101153.png,human,What is the difference between male and female in 2008?,3.94,0.03
+val:754,754,multi_col_1313.png,human,which value has the highest GBP?,Direct and indirect value,46
+val:759,759,multi_col_1346.png,human,what is the number of yes subtracted from the first age group and the last age group?,6,10
+val:781,781,multi_col_20001.png,human,For which of the degrees is there the biggest gap between the median weekly earnings of full-time wage and salary workers in 2020 in the US?,Some college or associate's degree,Advanced degree
+val:890,890,multi_col_60779.png,human,How many dark blue bar crossed 50 mark?,2,1
+val:1230,1230,two_col_104496.png,augmented,What was Whistles turnover in 2016?,33,58.5
+val:1312,1312,multi_col_80093.png,augmented,How much money did the apparel segment of Dollar General generate in 2020?,1506.1,2500
+val:1323,1323,multi_col_507.png,augmented,How many Democratic senators make up the 116th Congress?,45,53
+val:1339,1339,multi_col_706.png,augmented,How many Carrabba's Italian Grill restaurants were there in 2020?,220,340
+val:1430,1430,multi_col_20579.png,augmented,Watches and jewelry had a share of what percentage in the global luxury goods market in 2007?,18.2,16
+val:1551,1551,two_col_40211.png,augmented,Which soccer club ranked fourth in the Serie A rankings?,Genoa CFC,AC Milan
+val:1866,1866,two_col_43717.png,augmented,What was the most frequently used social network in Canada?,Instagram,Facebook

@@ -1,0 +1,16 @@
+{
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "dataset_revision": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "prompt_suffix": "Answer with only the final answer.",
+  "do_sample": false,
+  "max_image_tokens": 512,
+  "max_new_tokens": 32,
+  "manifest_sha256": "6e7c7b7ba23acacf41817904a48c47319b88d9726e4a150d75c2452d4d6a0a10",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch_version": "2.10.0+cu130",
+  "cuda_version": "13.0",
+  "transformers_version": "4.57.6"
+}
