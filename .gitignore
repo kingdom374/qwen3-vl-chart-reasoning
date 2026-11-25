@@ -1,5 +1,6 @@
 # Local runtimes, downloaded datasets and model weights
 /.venv/
+/.venv-p1/
 /.cache/
 /data/
 /models/
@@ -33,10 +34,11 @@ Thumbs.db
 *.pem
 *.key
 
-# Personal project handoff notes
+# Local handoff notes and raw experiment archive
 /*交接*.md
+/p1-review.tar.gz
 
-# Publish only the small, recorded P0 evidence files below
+# Publish the recorded P0 evidence and the P1 summary
 /outputs/*
 !/outputs/chartqa_p0/
 /outputs/chartqa_p0/*
@@ -50,3 +52,6 @@ Thumbs.db
 !/outputs/chartqa_p0/batch_bf16_512/scored_predictions.jsonl
 !/outputs/chartqa_p0/batch_bf16_512/summary.json
 !/outputs/chartqa_p0/batch_bf16_512/bad_cases.csv
+!/outputs/chartqa_p1/
+/outputs/chartqa_p1/*
+!/outputs/chartqa_p1/summary.json

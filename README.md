@@ -1,12 +1,23 @@
-# Qwen3-VL 图表问答与评测
+# Qwen3-VL 图表问答微调与评测
 
-在 RTX 4060 Laptop GPU 8GB 上运行 Qwen3-VL-2B，构建 ChartQA 固定样本推理、自动评分和错误分析流程。项目后续将开展 LoRA SFT 与可验证合成数据实验，比较基座、原始数据微调和数据增强微调的效果。
-
-当前完成 **P0 Baseline**。已有真实预测、固定评测清单、独立评分脚本和人工复盘记录。LoRA 训练和合成数据实验处于规划阶段。
+基于 Qwen3-VL-2B-Instruct 和 ChartQA，完成基座评测（P0）及多模态 LoRA SFT（P1）。训练只对助手答案与结束符计算损失，并通过单样本交叉熵复算、梯度检查和 adapter 重载验证训练流程。
 
 ## 实测结果
 
-模型使用 `Qwen/Qwen3-VL-2B-Instruct`，在 ChartQA 官方 `val` 的 1,920 道题中，用种子 `42` 从 `human` 和 `augmented` 各抽 50 道。下表统计固定的 100 道开发题，评测范围为这一验证子集。
+### P1 官方验证集全量对照
+
+在同一台 RTX 5090 上，用相同的推理和评分设置比较原始 Qwen3-VL-2B-Instruct（A）与 1,000 步 LoRA 微调后的模型（B）。微调使用 ChartQA 官方 `train`。评测覆盖官方 `val` 全部 **1,920 道题**，由 P0 固定的 100 道题和其余 1,820 道题组成，两组均生成了全部预测。
+
+| 指标 | 原始基座 A | LoRA 微调 B | 增幅 |
+| --- | ---: | ---: | ---: |
+| Exact Match | 1,273 / 1,920（66.30%） | 1,304 / 1,920（67.92%） | **+1.61 个百分点** |
+| Relaxed Accuracy | 1,469 / 1,920（76.51%） | 1,508 / 1,920（78.54%） | **+2.03 个百分点** |
+
+增幅按原始正确数之差计算。Relaxed 口径下有 79 道从错变对、40 道从对变错。正式训练实测约 118 秒，PyTorch 峰值分配显存约 6.34 GiB。模型与数据版本、分组分数、训练配置和耗时见 [P1 实验摘要](outputs/chartqa_p1/summary.json)。
+
+### P0 本机基座评测
+
+在 ChartQA 官方 `val` 的 1,920 道题中，用种子 `42` 从 `human` 和 `augmented` 各抽 50 道，并在 RTX 4060 Laptop GPU 上运行原始基座。下表统计本机的 100 道固定开发题。
 
 | 题目来源 | 题数 | Exact Match | P0 Relaxed Accuracy |
 | --- | ---: | ---: | ---: |
@@ -18,7 +29,7 @@
 
 核对证据可直接打开[统计汇总](outputs/chartqa_p0/batch_bf16_512/summary.json)、[原始预测](outputs/chartqa_p0/batch_bf16_512/predictions.jsonl)、[逐题评分](outputs/chartqa_p0/batch_bf16_512/scored_predictions.jsonl)和[运行配置](outputs/chartqa_p0/batch_bf16_512/config.json)。
 
-## 运行流程
+## P0 基座评测流程
 
 ```mermaid
 flowchart LR
@@ -39,7 +50,7 @@ flowchart LR
 
 推理时输入图片和问题，参考答案用于生成完成后的评分。批量阶段每次处理 1 道题，模型始终驻留同一块 GPU。
 
-## 快速复算已保存的结果
+## 快速复算 P0 分数
 
 仓库保留了小型文本实验记录。使用 Python 3.12，在项目根目录运行以下命令即可复算分数。评分脚本仅使用 Python 标准库，CPU 即可完成。
 
@@ -77,7 +88,7 @@ $P0Python = '.\.venv\Scripts\python.exe'
 & $P0Python -m pip install --dry-run -r requirements.txt
 ```
 
-审查预演清单，再安装项目依赖。`constraints-gpu.txt` 将 GPU 包固定为本次实测版本。已有这两个版本时 pip 会复用它们。新机器先依据自身系统和 GPU 配置安装兼容的 PyTorch，再准备项目环境；其他版本尚待验证。 [PyTorch 安装指南](https://pytorch.org/get-started/locally/)
+审查预演清单，再安装项目依赖。`constraints-gpu.txt` 将 GPU 包固定为 P0 实测版本。已有这两个版本时 pip 会复用它们。新机器先依据自身系统和 GPU 配置安装兼容的 PyTorch，再准备项目环境。 [PyTorch 安装指南](https://pytorch.org/get-started/locally/)
 
 ```powershell
 & $P0Python -m pip install -r requirements.txt
@@ -120,6 +131,79 @@ $env:HF_HOME = Join-Path $PWD.Path '.cache\huggingface'
 | 解码 | 贪心，`do_sample=False` |
 | 题目后追加的提示词 | `Answer with only the final answer.` |
 
+## P1 单卡 LoRA 训练与评测
+
+### 环境与缓存
+
+P1 实测环境为 Linux、RTX 5090、Python `3.12.3`、PyTorch `2.8.0+cu128`、torchvision `0.23.0+cu128`。以下命令在项目根目录运行，先使用已有这两个 GPU 包的 Python 创建虚拟环境。P0 的 `requirements.txt` 对应 Windows 推理环境。
+
+```bash
+python -m venv --system-site-packages .venv-p1
+P1_PYTHON=./.venv-p1/bin/python
+"$P1_PYTHON" -m pip install \
+  'torch==2.8.0+cu128' 'torchvision==0.23.0+cu128' \
+  'transformers==4.57.6' 'accelerate==1.12.0' 'peft==0.18.0' \
+  'pyarrow==22.0.0' 'huggingface-hub==0.36.2' 'tokenizers==0.22.2' \
+  'regex==2026.11.9' 'Pillow==11.3.0' 'filelock==3.20.0'
+"$P1_PYTHON" -m pip check
+```
+
+缓存中需要固定版本的模型权重、处理器文件和 ChartQA 的三个 `train` 分片及一个 `val` 分片。可以在有网络时运行以下命令准备缓存。已从其他机器同步完整缓存时，可直接进入离线阶段。
+
+```bash
+export HF_HOME="$PWD/.cache/huggingface"
+"$P1_PYTHON" - <<'PY'
+from huggingface_hub import hf_hub_download, snapshot_download
+
+snapshot_download(
+    "Qwen/Qwen3-VL-2B-Instruct",
+    revision="89644892e4d85e24eaac8bacfd4f463576704203",
+    allow_patterns=[
+        "*.json", "merges.txt", "model.safetensors",
+    ],
+)
+
+for filename in ["data/val-00000-of-00001.parquet", *(
+    f"data/train-{index:05d}-of-00003.parquet" for index in range(3)
+)]:
+    hf_hub_download(
+        "ahmed-masry/ChartQA",
+        filename=filename,
+        repo_type="dataset",
+        revision="af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+    )
+PY
+```
+
+### 离线复现
+
+| 脚本 | 作用 |
+| --- | --- |
+| [inspect_sft_sample.py](scripts/inspect_sft_sample.py) | 用 `train:0` 核对图文输入、助手答案边界和 `labels` |
+| [run_lora_smoke.py](scripts/run_lora_smoke.py) | 复算首条样本的交叉熵，验证梯度、权重更新和 adapter 重载 |
+| [train_lora.py](scripts/train_lora.py) | 使用官方 `train` 做 LoRA SFT，保存训练日志和 adapter |
+| [run_ab.py](scripts/run_ab.py) | 在同条件下评测基座和 LoRA，支持逐题续跑及 P0 评分规则 |
+
+以下三项预检可在 CPU 上运行。
+
+```bash
+export HF_HUB_OFFLINE=1
+"$P1_PYTHON" scripts/inspect_sft_sample.py
+"$P1_PYTHON" scripts/train_lora.py --check-only
+"$P1_PYTHON" scripts/run_ab.py --eval-set remaining-val --check-only
+```
+
+以下训练和推理命令使用一张支持 BF16 的 CUDA GPU。B 默认读取正式训练保存的 adapter，两个评测子集各有一个结果目录。重复训练可指定新的 `--output-dir`，评测时用 `--adapter` 加载相应权重，并用 `--output-root` 保存独立对照。
+
+```bash
+"$P1_PYTHON" -u scripts/run_lora_smoke.py
+"$P1_PYTHON" -u scripts/train_lora.py --max-steps 1000 --save-steps 100
+"$P1_PYTHON" -u scripts/run_ab.py --group A
+"$P1_PYTHON" -u scripts/run_ab.py --group B
+"$P1_PYTHON" -u scripts/run_ab.py --eval-set remaining-val --group A
+"$P1_PYTHON" -u scripts/run_ab.py --eval-set remaining-val --group B
+```
+
 ## 评分规则与错误分析
 
 **Exact Match** 统一大小写及空白后比较答案文本。**P0 Relaxed Accuracy** 对能解析的数值使用以下规则，其他答案按规范化文本匹配。
@@ -142,12 +226,12 @@ $env:HF_HOME = Join-Path $PWD.Path '.cache\huggingface'
 
 ## 结果范围与后续实验
 
-目前的 100 道题用于开发与链路验证，抽样误差和匹配规则都会影响得分。验证集会用于后续开发，官方 `train` 用于微调，`test` 预留给最终统一评估。当前实验记录能够复算评分；跨设备重新推理的数值确定性有待验证。
+P0 固定的 100 道题用于开发与流程验证。P1 主结果覆盖官方 `val` 全集，来自一次 LoRA 训练，随机种子为 42。匹配规则会影响自动评测结果，官方 `test` 预留给后续最终评估。
 
 | 阶段 | 状态 | 目标 |
 | --- | --- | --- |
 | P0 基座 Baseline | 已完成 | 单图、固定清单推理、评分、日志和错例复盘 |
-| P1 LoRA SFT | 待开展 | 检查训练样本和 loss mask，跑通训练冒烟与 adapter 保存加载，做 A/B 对照 |
+| P1 LoRA SFT | 已完成 | 单样本损失核对、10 步冒烟、1,000 步训练和全量验证集 A/B 对照 |
 | P2 可验证合成数据 | 待开展 | 程序绘图与答案计算，筛选并开展数据增强对照 |
 
 ## 数据与模型来源
